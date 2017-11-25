@@ -66,7 +66,7 @@ mysql_query("UPDATE bus_info SET stat='".$act."' WHERE id='".$bid."'");
                                      <tbody>
 <?php
 
-$ddaa = mysql_query("SELECT id, route, time, date, seat, stat FROM bus_info WHERE exp='0' ORDER BY id");
+$ddaa = mysql_query("SELECT id, route, time, date, seat, stat FROM bus_info WHERE exp='1' ORDER BY id");
     echo mysql_error();
     while ($data = mysql_fetch_array($ddaa))
     {
