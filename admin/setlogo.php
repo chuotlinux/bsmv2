@@ -31,7 +31,7 @@ $pend = mysql_fetch_array(mysql_query("SELECT COUNT(*) FROM seat_details WHERE s
 
 
     <div class="pageheader">
-      <h2><i class="fa fa-cog"></i> LOGO </h2>
+      <h2><i class="fa fa-cog"></i> Logo </h2>
     </div>
 
     <div class="contentpanel">
@@ -68,7 +68,7 @@ $pend = mysql_fetch_array(mysql_query("SELECT COUNT(*) FROM seat_details WHERE s
 <br/>
 				  
             <div class="form-group">
-              <label class="col-sm-3 control-label">LOGO</label>
+              <label class="col-sm-3 control-label">Chọn hình để tải lên</label>
               <div class="col-sm-6"><input name="bgimg" type="file" id="bgimg" /></div>
             </div>
                 
@@ -82,7 +82,7 @@ $pend = mysql_fetch_array(mysql_query("SELECT COUNT(*) FROM seat_details WHERE s
         <div style="display: block;" class="panel-footer">
 			 <div class="row">
 				<div class="col-sm-6 col-sm-offset-3">
-				<button type="submit" class="btn btn-primary btn-block">UPLOAD</button>
+				<button type="submit" class="btn btn-primary btn-block">TẢI LÊN</button>
 				</div>
 			 </div>
 			 
@@ -93,7 +93,7 @@ $pend = mysql_fetch_array(mysql_query("SELECT COUNT(*) FROM seat_details WHERE s
 		  </div><!-- panel-footer -->
         
 		
-Current Image : <br/><img src="../img/logo.png" width="300px;" height="120px" alt="IMG">
+Hình ảnh hiện tại <br/><img src="../img/logo.png" width="300px;" height="120px" alt="IMG">
 
 <br/><br/><br/><br/>
 		

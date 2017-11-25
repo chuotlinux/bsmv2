@@ -21,7 +21,7 @@ $usid = mysql_fetch_array(mysql_query("SELECT id FROM users WHERE username='".$u
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Change ADMIN Password</h1>
+                    <h1 class="page-header">Thay đổi mật khẩu ADMIN</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
@@ -79,14 +79,14 @@ if($res){
 	echo "<div class=\"alert alert-success alert-dismissable\">
 <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-hidden=\"true\">&times;</button>	
 
-Password Updated Successfully!
+Mật khẩu đã được thay đổi thành công!
 
 </div>";
 }else{
 	echo "<div class=\"alert alert-danger alert-dismissable\">
 <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-hidden=\"true\">&times;</button>	
 
-Some Problem Occurs, Please Try Again. 
+Có lỗi trong quá trình xử lý, vui lòng thử lại!
 
 </div>";
 }
@@ -96,7 +96,7 @@ if ($err1 == 1){
 echo "<div class=\"alert alert-danger alert-dismissable\">
 <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-hidden=\"true\">&times;</button>	
 
-Your Current Password Does Not Match.
+Mật khẩu hiện tại không đúng.
 
 </div>";
 }		
@@ -104,7 +104,7 @@ if ($err2 == 1){
 	echo "<div class=\"alert alert-danger alert-dismissable\">
 <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-hidden=\"true\">&times;</button>	
 
-You Enter Different Password in two field. Please enter same password in both field.
+Vui lòng nhập mật khẩu giống nhau ở cả 2 ô mật khẩu!
 
 </div>";
 
@@ -113,7 +113,7 @@ if ($err3 == 1){
 echo "<div class=\"alert alert-danger alert-dismissable\">
 <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-hidden=\"true\">&times;</button>	
 
-Password Can Not Be Empty!!!
+Mật khẩu không thể để trống!!!
 
 </div>";
 echo"<h1></h1>";
@@ -122,7 +122,7 @@ if ($err4 == 1){
 	echo "<div class=\"alert alert-danger alert-dismissable\">
 <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-hidden=\"true\">&times;</button>	
 
-Password Must be 4 or more char.
+Mật khẩu phải có nhiều hơn 4 ký tự.
 
 </div>";
 }	
@@ -147,11 +147,11 @@ Password Must be 4 or more char.
 				<form action="changepass.php" method="post">
 		
                     <div class="form-group">
-                        <input class="form-control" placeholder="Current Password" name="oldword" type="password">
-                        <input class="form-control" placeholder="New Password" name="newword" type="password">
-                        <input class="form-control" placeholder="New Password Again" name="newwword" type="password">
+                        <input class="form-control" placeholder="Mật khẩu hiện tại" name="oldword" type="password">
+                        <input class="form-control" placeholder="Mật khẩu mới" name="newword" type="password">
+                        <input class="form-control" placeholder="Nhập lại mật khẩu mới" name="newwword" type="password">
                     </div>
-					<input type="submit" class="btn btn-lg btn-success btn-block" value="Change">
+					<input type="submit" class="btn btn-lg btn-success btn-block" value="Thay đổi">
 				</form>
                 </div>
                 

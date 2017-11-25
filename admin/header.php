@@ -17,7 +17,7 @@ redirect('signout.php');
   <meta name="author" content="">
   <link rel="shortcut icon" href="images/favicon.png" type="image/png">
 
-  <title>BUS TICKET MANAGEMENT</title>
+  <title>HỆ THỐNG QUẢN LÝ VÉ</title>
 
   <link href="css/style.default.css" rel="stylesheet"> 
 
@@ -86,39 +86,39 @@ $( "#datepicker2" ).datepicker();
             </ul>
         </div>
 
-      <h5 class="sidebartitle">Navigation</h5>
+      <h5 class="sidebartitle">Điều Hướng</h5>
       <ul class="nav nav-pills nav-stacked nav-bracket">
 	  
 	  
 	   
 	  
-        <li><a href="home.php"><i class="fa fa-home"></i> <span>Dashboard</span></a></li>
+        <li><a href="home.php"><i class="fa fa-home"></i> <span>Bảng Điều Khiển</span></a></li>
         
 	
-        <li class="nav-parent"><a href="#"><i class="fa fa-table fa-fw"></i><span>Manage Route</span></a>
+        <li class="nav-parent"><a href="#"><i class="fa fa-table fa-fw"></i><span>Quản Lý Tuyến Xe</span></a>
 
           <ul style="display: none;" class="children">
-                        <li><a href="routeadd.php"><i class="fa fa-caret-right"></i>Add New Route</a></li>
-                        <li><a href="routeview.php"><i class="fa fa-caret-right"></i>View/Edit Route</a></li>
+                        <li><a href="routeadd.php"><i class="fa fa-caret-right"></i>Thêm Tuyến Xe Mới</a></li>
+                        <li><a href="routeview.php"><i class="fa fa-caret-right"></i>Xem/Sửa Tuyến Xe</a></li>
 
           </ul>
         </li>
 	
-        <li class="nav-parent"><a href="#"><i class="fa fa-bar-chart-o fa-fw"></i><span>Manage Bus</span></a>
+        <li class="nav-parent"><a href="#"><i class="fa fa-bar-chart-o fa-fw"></i><span>Quản Lý Xe</span></a>
 
           <ul style="display: none;" class="children">
 
-                                <li><a href="busadd.php"><i class="fa fa-caret-right"></i>Add New Bus Schedule</a></li>
-                                <li><a href="bussch.php"><i class="fa fa-caret-right"></i>View Bus Schedule</a></li>
-                                <li><a href="busview.php"><i class="fa fa-caret-right"></i>View/Edit Buses</a></li>
+                                <li><a href="busadd.php"><i class="fa fa-caret-right"></i>Thêm Mới Xe</a></li>
+                                <li><a href="bussch.php"><i class="fa fa-caret-right"></i>Xem Lịch Trình Xe</a></li>
+                                <li><a href="busview.php"><i class="fa fa-caret-right"></i>Xem/Sửa Thông Tin Xe</a></li>
 
           </ul>
         </li>
 
-		                        <li><a href="busreserves.php"><i class="fa fa-edit fa-fw"></i>Bus Tickets Info</a></li>
+		                        <li><a href="busreserves.php"><i class="fa fa-edit fa-fw"></i>Thông Tin Vé Xe</a></li>
                        
 
-                        <li><a href="authorize.php"><i class="fa fa-ticket fa-fw"></i>Pending Tickets</span></a></li>
+                        <li><a href="authorize.php"><i class="fa fa-ticket fa-fw"></i>Vé Đang Treo</span></a></li>
 
 
 
@@ -127,16 +127,16 @@ $( "#datepicker2" ).datepicker();
 
 
 
-		<li class="nav-parent"><a href="#"><i class="fa fa-cog"></i> <span>Setting</span></a>
+		<li class="nav-parent"><a href="#"><i class="fa fa-cog"></i> <span>Thiết Lập</span></a>
           <ul class="children">
-            <li><a href="setgeneral.php"><i class="fa fa-caret-right"></i> General Setting</a></li>
-            <li><a href="setlogo.php"><i class="fa fa-caret-right"></i> LOGO</a></li>
-            <li><a href="setslider.php"><i class="fa fa-caret-right"></i> SLIDER</a></li>
+            <li><a href="setgeneral.php"><i class="fa fa-caret-right"></i> Thiết Lập Tổng Quát</a></li>
+            <li><a href="setlogo.php"><i class="fa fa-caret-right"></i> Logo</a></li>
+            <li><a href="setslider.php"><i class="fa fa-caret-right"></i> Hình Quảng Cáo</a></li>
 
           </ul>
         </li>
 		
-    
+    <!--
         <li class="nav-parent"><a href="#"><i class="fa fa-th-list"></i> <span>MENU Manager</span></a>
           <ul class="children">
             <li><a href="menuadd.php"><i class="fa fa-caret-right"></i>Add MENU</a></li>
@@ -144,7 +144,7 @@ $( "#datepicker2" ).datepicker();
           </ul>
         </li>
 
-
+-->
 
 
       </ul>
@@ -174,8 +174,8 @@ echo " $user";
                 <span class="caret"></span>
               </button>
               <ul class="dropdown-menu dropdown-menu-usermenu pull-right">
-              <li><a href="changepass.php"><i class="fa fa-cog"></i> <span>Account Settings</span></a></li>
-              <li><a href="signout.php"><i class="fa fa-sign-out"></i> <span>Sign Out</span></a></li>
+              <li><a href="changepass.php"><i class="fa fa-cog"></i> <span>Thiết Lập Tài Khoản</span></a></li>
+              <li><a href="signout.php"><i class="fa fa-sign-out"></i> <span>Đăng Xuất</span></a></li>
               </ul>
             </div>
           </li>

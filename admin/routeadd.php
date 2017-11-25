@@ -23,7 +23,7 @@ $usid = mysql_fetch_array(mysql_query("SELECT id FROM users WHERE username='".$u
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Add New ROUTE</h1>
+                    <h1 class="page-header">Thêm Mới LỊCH TRÌNH XE</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
@@ -60,7 +60,7 @@ if($res){
 	echo "<div class=\"alert alert-success alert-dismissable\">
 <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-hidden=\"true\">&times;</button>	
 
-Route Added Successfully!
+Thêm mới lịch trình xe thành công!
 
 </div>";
 
@@ -68,7 +68,7 @@ Route Added Successfully!
 	echo "<div class=\"alert alert-danger alert-dismissable\">
 <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-hidden=\"true\">&times;</button>	
 
-Some Problem Occurs, Please Try Again. 
+Có lỗi xảy ra. Vui lòng thử lại.
 
 </div>";
 }
@@ -79,7 +79,7 @@ if ($err1 == 1){
 echo "<div class=\"alert alert-danger alert-dismissable\">
 <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-hidden=\"true\">&times;</button>	
 
-Route Name Can Not Be Empty!!!
+Tên lịch trình không thể để trống!!!
 
 </div>";
 echo"<h1></h1>";
@@ -106,10 +106,10 @@ echo"<h1></h1>";
 		
                     <div class="form-group">
 					
-					<label>ROUTE Name</label><input class="form-control" placeholder="Name of the Route" name="rname" type="text"><br/>
+					<label>Tên Lịch Trình</label><input class="form-control" placeholder="Tên Lịch Trình" name="rname" type="text"><br/>
 				    
 					</div>
-					<input type="submit" class="btn btn-lg btn-success btn-block" value="ADD">
+					<input type="submit" class="btn btn-lg btn-success btn-block" value="THÊM MỚI">
 			    	</form>
                 </div>
 						

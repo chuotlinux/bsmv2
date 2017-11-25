@@ -32,7 +32,7 @@ $pend = mysql_fetch_array(mysql_query("SELECT COUNT(*) FROM seat_details WHERE s
 
 
     <div class="pageheader">
-      <h2><i class="fa fa-cog"></i> General Setting </h2>
+      <h2><i class="fa fa-cog"></i> Thiết Lập Tổng Quát </h2>
     </div>
 
     <div class="contentpanel">
@@ -64,14 +64,14 @@ if($res){
 	echo "<div class=\"alert alert-success alert-dismissable\">
 <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-hidden=\"true\">&times;</button>	
 
-Updated Successfully!
+Cập Nhật Thành Công!
 
 </div>";
 }else{
 	echo "<div class=\"alert alert-danger alert-dismissable\">
 <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-hidden=\"true\">&times;</button>	
 
-Some Problem Occurs, Please Try Again. 
+Có lỗi xảy ra. Vui lòng thử lại.
 
 </div>";
 }
@@ -85,14 +85,14 @@ $data = mysql_fetch_array(mysql_query("SELECT sitename, mobile, email FROM gener
 			
 			
             <div class="form-group">
-              <label class="col-sm-3 control-label">WEBSITE TITLE</label>
+              <label class="col-sm-3 control-label">Tiêu Đề Website</label>
               <div class="col-sm-6"><input name="sitename" value="<?php echo $data[0]; ?>" class="form-control" type="text"></div>
             </div>
                 
             
                         
             <div class="form-group">
-              <label class="col-sm-3 control-label">Mobile</label>
+              <label class="col-sm-3 control-label">Điện Thoại</label>
               <div class="col-sm-6"><input name="mobile" value="<?php echo $data[1]; ?>" class="form-control" type="text"></div>
             </div>
                 
@@ -112,7 +112,7 @@ $data = mysql_fetch_array(mysql_query("SELECT sitename, mobile, email FROM gener
         <div style="display: block;" class="panel-footer">
 			 <div class="row">
 				<div class="col-sm-6 col-sm-offset-3">
-				  <button class="btn btn-primary">Submit</button>
+				  <button class="btn btn-primary">CẬP NHẬT</button>
 				</div>
 			 </div>
 			 

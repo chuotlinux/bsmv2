@@ -23,7 +23,7 @@ $usid = mysql_fetch_array(mysql_query("SELECT id FROM users WHERE username='".$u
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">View/Edit Route</h1>
+                    <h1 class="page-header">Xem/Sửa TUYẾN XE</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
@@ -35,7 +35,7 @@ $usid = mysql_fetch_array(mysql_query("SELECT id FROM users WHERE username='".$u
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            List Of Route
+                            Danh Sách Tuyến
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
@@ -44,8 +44,8 @@ $usid = mysql_fetch_array(mysql_query("SELECT id FROM users WHERE username='".$u
                                     <thead>
                                         <tr>
                                             <th>#</th>
-                                            <th>Name of Route</th>
-                                            <th>Action</th>
+                                            <th>Tên Tuyến</th>
+                                            <th></th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -62,7 +62,7 @@ $ddaa = mysql_query("SELECT id, routename FROM bus_route ORDER BY id");
 											
 											<form action=\"routeedit.php\" method=\"get\">
 											<input type=\"hidden\" name=\"cid\" value=\"$data[0]\">
-								            <input type=\"submit\" class=\"btn btn-warning\" value=\"EDIT\">
+								            <input type=\"submit\" class=\"btn btn-warning\" value=\"THAY ĐỔI\">
 											</form>
 											
 											</td>

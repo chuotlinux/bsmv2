@@ -34,7 +34,7 @@ $pend = mysql_fetch_array(mysql_query("SELECT COUNT(*) FROM seat_details WHERE s
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Dashboard</h1>
+                    <h1 class="page-header">Bảng Điều Khiển</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
@@ -49,13 +49,13 @@ $pend = mysql_fetch_array(mysql_query("SELECT COUNT(*) FROM seat_details WHERE s
                                 </div>
                                 <div class="col-xs-9 text-right">
                                     <div class="huge"><?php echo $bus[0] ?></div>
-                                    <div>Total Bus!</div>
+                                    <div>Tổng Số Xe!</div>
                                 </div>
                             </div>
                         </div>
                         <a href="busview.php">
                             <div class="panel-footer">
-                                <span class="pull-left">View Details</span>
+                                <span class="pull-left">Xem Chi Tiết</span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                                 <div class="clearfix"></div>
                             </div>
@@ -71,13 +71,13 @@ $pend = mysql_fetch_array(mysql_query("SELECT COUNT(*) FROM seat_details WHERE s
                                 </div>
                                 <div class="col-xs-9 text-right">
                                     <div class="huge"><?php echo $tickets[0] ?></div>
-                                    <div>Total Seats!</div>
+                                    <div>Tổng Số Ghế!</div>
                                 </div>
                             </div>
                         </div>
                         <a href="busreserves.php">
                             <div class="panel-footer">
-                                <span class="pull-left">View Details</span>
+                                <span class="pull-left">Xem Chi Tiết</span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                                 <div class="clearfix"></div>
                             </div>
@@ -93,13 +93,13 @@ $pend = mysql_fetch_array(mysql_query("SELECT COUNT(*) FROM seat_details WHERE s
                                 </div>
                                 <div class="col-xs-9 text-right">
                                     <div class="huge"><?php echo $sold[0] ?></div>
-                                    <div>Total Sold!</div>
+                                    <div>Tổng Ghế Đã Bán!</div>
                                 </div>
                             </div>
                         </div>
                         <a href="busreserves.php">
                             <div class="panel-footer">
-                                <span class="pull-left">View Details</span>
+                                <span class="pull-left">Xem Chi Tiết</span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                                 <div class="clearfix"></div>
                             </div>
@@ -115,13 +115,13 @@ $pend = mysql_fetch_array(mysql_query("SELECT COUNT(*) FROM seat_details WHERE s
                                 </div>
                                 <div class="col-xs-9 text-right">
                                     <div class="huge"><?php echo $pend[0] ?></div>
-                                    <div>Pending Tickets!</div>
+                                    <div>Vé Đang Treo!</div>
                                 </div>
                             </div>
                         </div>
                         <a href="authorize.php">
                             <div class="panel-footer">
-                                <span class="pull-left">View Details</span>
+                                <span class="pull-left">Xem Chi Tiết</span>
                                 <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
                                 <div class="clearfix"></div>
                             </div>

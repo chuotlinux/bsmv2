@@ -31,7 +31,7 @@ $pend = mysql_fetch_array(mysql_query("SELECT COUNT(*) FROM seat_details WHERE s
 
 
     <div class="pageheader">
-      <h2><i class="fa fa-cog"></i> Manage Slider</h2>
+      <h2><i class="fa fa-cog"></i> Quản Lý Hình Ảnh Quảng Cáo</h2>
     </div>
 
     
@@ -67,14 +67,14 @@ if($res){
 	echo "<div class=\"alert alert-success alert-dismissable\">
 <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-hidden=\"true\">&times;</button>	
 
-Added Successfully!
+Thêm hình thành công!!!
 
 </div>";
 }else{
 	echo "<div class=\"alert alert-danger alert-dismissable\">
 <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-hidden=\"true\">&times;</button>	
 
-Some Problem Occurs, Please Try Again. 
+Có lỗi xảy ra. Vui lòng thử lại 
 
 </div>";
 }
@@ -92,14 +92,14 @@ Some Problem Occurs, Please Try Again.
             </div>
 			
               <div class="form-group">
-              <label class="col-sm-3 control-label">IMAGE</label>
+              <label class="col-sm-3 control-label">Hình ảnh</label>
               <div class="col-sm-6"><input name="bgimg" type="file" id="bgimg" /></div>
             </div>
 			  
 		
 		  
 				<div class="col-sm-6 col-sm-offset-3"><br/>
-				  <button class="btn btn-primary btn-block">UPLOAD</button><br/><br/>
+				  <button class="btn btn-primary btn-block">TẢI LÊN</button><br/><br/>
 				</div>
 			
 			 
@@ -123,7 +123,7 @@ $ddaa = mysql_query("SELECT id, img FROM sliders ORDER BY id");
               <label class=\"col-sm-3 control-label\"></label>
  <div class=\"col-sm-8\">
  <img src=\"../img/slider/$data[1]\" alt=\"IMG\"  height=\"100\" width=\"400\">
- <a class=\"btn btn-danger btn-lg\" href=\"delslider.php?id=$data[0]\">Delete</a><br/><br/><br/>
+ <a class=\"btn btn-danger btn-lg\" href=\"delslider.php?id=$data[0]\">XOÁ</a><br/><br/><br/>
  </div>
  	";
 	}

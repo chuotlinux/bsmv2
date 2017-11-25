@@ -24,7 +24,7 @@ $usid = mysql_fetch_array(mysql_query("SELECT id FROM users WHERE username='".$u
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Add New Bus</h1>
+                    <h1 class="page-header">Thêm XE</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
@@ -81,7 +81,7 @@ $i++;
 echo "<div class=\"alert alert-success alert-dismissable\">
 <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-hidden=\"true\">&times;</button>	
 
-Bus Added Successfully!
+Thêm thông tin xe mới thành công!
 
 </div>";
 
@@ -89,7 +89,7 @@ Bus Added Successfully!
 	echo "<div class=\"alert alert-danger alert-dismissable\">
 <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-hidden=\"true\">&times;</button>	
 
-Some Problem Occurs, Please Try Again. 
+Có lỗi xảy ra. Vui lòng thử lại. 
 
 </div>";
 }
@@ -100,7 +100,7 @@ if ($err1 == 1){
 echo "<div class=\"alert alert-danger alert-dismissable\">
 <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-hidden=\"true\">&times;</button>	
 
-Please select a Route!!!!
+Vui lòng chọn lịch trình!!!
 
 </div>";
 }
@@ -108,7 +108,7 @@ if ($err2 == 1){
 echo "<div class=\"alert alert-danger alert-dismissable\">
 <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-hidden=\"true\">&times;</button>	
 
-You must have to Enter Bus Time!!!!
+Vui lòng chọn thời gian!!!
 
 </div>";
 
@@ -118,7 +118,7 @@ if ($err3 == 1){
 	echo "<div class=\"alert alert-danger alert-dismissable\">
 <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-hidden=\"true\">&times;</button>	
 
-Please select a Bus Date.....
+Vui lòng chọn ngày!!!
 
 </div>";
 }	
@@ -147,10 +147,10 @@ Please select a Bus Date.....
 		
                     <div class="form-group">
 					
-					<label>Select Route</label>
+					<label>Chọn Lịch Trình</label>
 					
 					<select name="route" class="form-control">
-					<option value="0">Please Select a Route</option>
+					<option value="0">Vui lòng chọn lịch trình</option>
 					<?php
 
 $ddaa = mysql_query("SELECT id, routename FROM bus_route ORDER BY id");
@@ -164,7 +164,7 @@ $ddaa = mysql_query("SELECT id, routename FROM bus_route ORDER BY id");
 					</select><br/>
 
 
-	<label>Select Time</label>
+	<label>Chọn Thời Gian</label>
 
 
 
@@ -184,7 +184,7 @@ $ddaa = mysql_query("SELECT id, routename FROM bus_route ORDER BY id");
                     
 					</div>
 				
-					<input type="submit" class="btn btn-lg btn-success btn-block" value="ADD">
+					<input type="submit" class="btn btn-lg btn-success btn-block" value="THÊM MỚI">
 			    	</form>
                 </div>
 						

@@ -26,7 +26,7 @@ $usid = mysql_fetch_array(mysql_query("SELECT id FROM users WHERE username='".$u
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">SEAT Information</h1>
+                    <h1 class="page-header">Thông Tin GHẾ</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>

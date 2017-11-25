@@ -35,7 +35,7 @@ mysql_query("UPDATE bus_info SET stat='".$act."' WHERE id='".$bid."'");
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">View/Edit Buses</h1>
+                    <h1 class="page-header">Xem/Sửa THÔNG TIN XE</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
@@ -53,14 +53,14 @@ mysql_query("UPDATE bus_info SET stat='".$act."' WHERE id='".$bid."'");
                                 <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                     <thead>
                                         <tr>
-                                            <th>Bus #</th>
-                                            <th>Route</th>
-                                            <th>Date</th>
-                                            <th>Time</th>
-                                            <th>Total Seat</th>
-                                            <th>Sold Seat</th>
-                                            <th>Available Seat</th>
-                                            <th>Action</th>
+                                            <th>Số Xe</th>
+                                            <th>Tuyến</th>
+                                            <th>Ngày</th>
+                                            <th>Giờ</th>
+                                            <th>Tổng Ghế</th>
+                                            <th>Ghế Đã Bán</th>
+                                            <th>Ghế Còn Trống</th>
+                                            <th></th>
                                         </tr>
                                     </thead>
                                      <tbody>
@@ -85,8 +85,8 @@ $rname = mysql_fetch_array(mysql_query("SELECT routename FROM bus_route WHERE id
                                    
                                             
 											<td>
-<a href=\"busedit.php?bid=$data[0]\"><button type=\"button\" class=\"btn btn-warning btn-xs\">EDIT</button></a>
-<a href=\"seatview.php?bid=$data[0]\"><button type=\"button\" class=\"btn btn-info btn-xs\">SEATS</button></a>
+<a href=\"busedit.php?bid=$data[0]\"><button type=\"button\" class=\"btn btn-warning btn-xs\">THAY ĐỔI</button></a>
+<a href=\"seatview.php?bid=$data[0]\"><button type=\"button\" class=\"btn btn-info btn-xs\">GHẾ</button></a>
 ";
 
 if($data[5]==1){
