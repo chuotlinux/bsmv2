@@ -25,7 +25,9 @@
 <script src="js/select2.min.js"></script>
 <script src="js/dropzone.min.js"></script>
 <script src="js/colorpicker.js"></script>
-
+<script src="js/datepicker-vi.js"></script>
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/blitzer/jquery-ui.min.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/blitzer/theme.min.css" rel="stylesheet">
 
 <script src="js/custom.js"></script>
 
@@ -72,6 +74,7 @@ jQuery(document).ready(function(){
 	});
    
   // Date Picker
+  $.datepicker.setDefaults($.datepicker.regional['vi']);
   jQuery('#datepicker').datepicker();
   
   jQuery('#datepicker-inline').datepicker();
