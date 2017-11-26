@@ -77,7 +77,7 @@ if ($user != "admin") {
 
 
                         <li><a href="home.php"><i class="fa fa-home"></i> <span>Bảng Điều Khiển</span></a></li>
-
+						<li><a href="datechecking.php"><i class="fa fa-ticket fa-fw"></i>Đặt Vé</span></a></li>
 
                         <li class=""><a href="#"><i class="fa fa-table fa-fw"></i><span>Quản Lý Tuyến Xe</span></a>
 
@@ -102,7 +102,7 @@ if ($user != "admin") {
 
 
                         <li><a href="authorize.php"><i class="fa fa-ticket fa-fw"></i>Vé Đang Treo</span></a></li>
-
+						
                         <!--
                         
                                         <li> <button class="btn btn-block btn-info">Website Management</button> </li>		

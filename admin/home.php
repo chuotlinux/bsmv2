@@ -114,30 +114,6 @@
                     </a>
                 </div>
             </div>
-            <div class="row">
-                <form class="bookingFrm" target="_blank" action="booking.php" method="POST">
-                    <h2>CHỌN NGÀY ĐẶT VÉ</h2>
-                    <div id="datepicker-multiple"></div>
-
-                    <h3>Ngày đặt vé</h3>
-                    <h3 class="selected-date"></h3>
-
-                    <div class="row" id="id1">
-                        <div class="col-md-4">
-                            <h4>Tuyến:</h4>
-                            <select class="form-control" id="schedule" name="schedule"></select>
-                            <input type="text" id="route" name="route" hidden="">
-                        </div>
-                    </div>
-
-                    <br><br>
-                    <input type="text" hidden="" id="selectedDate" name="selectedDate">
-                    <input type="button" value="Tiếp tục" class="btn btn-primary">
-                </form>
-            </div>
-        </div>
-
-            <!-- /.row -->
     </div>
 
 <?php
