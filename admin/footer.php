@@ -78,7 +78,24 @@ jQuery(document).ready(function(){
   
   jQuery('#datepicker-multiple').datepicker({
     numberOfMonths: 3,
-    showButtonPanel: true
+    minDate: 0,
+    showButtonPanel: true,
+    onSelect: function(date, instance) {
+            var selected = $(this).val();
+            console.log(selected);
+            $("#selectedDate").val(selected);
+            $(".selected-date").empty().append(selected);
+            $.ajax({
+                    type: "POST",
+                    url: "./controller/getSchedule.php",
+                    data: { date: selected },
+                    success: function(result)
+                    {
+                        console.log(result);
+                        $("#schedule").html(result);
+                    }
+            });
+    }
   });
   
   // Spinner
