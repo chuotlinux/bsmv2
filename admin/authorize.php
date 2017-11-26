@@ -1,6 +1,6 @@
 <?php
 require_once('function.php');
-connectdb();
+connectdbuser();
 session_start();
 
 if (!is_user()) {
@@ -13,8 +13,9 @@ if (!is_user()) {
 
 <?php
  $user = $_SESSION['username'];
-$usid = mysql_fetch_array(mysql_query("SELECT id FROM users WHERE username='".$user."'"));
+ $usid = mysql_fetch_array(mysql_query("SELECT id FROM mst_user WHERE username='".$user."'"));
  $uid = $usid[0];
+ connectdb();
  include ('header.php');
  ?>
     <!-- DataTables CSS -->
@@ -26,7 +27,7 @@ $usid = mysql_fetch_array(mysql_query("SELECT id FROM users WHERE username='".$u
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Pending Bus Tickets</h1>
+                    <h1 class="page-header">Vé Xe Đang Treo</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
@@ -216,14 +217,14 @@ if($seatid==1){
                                 <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                     <thead>
                                         <tr>
-                                            <th>Bus #</th>
-                                            <th>Route</th>
-                                            <th>Date</th>
-                                            <th>Time</th>
-                                            <th>Seat</th>
-                                            <th>Transaction ID</th>
-                                            <th>Ignore</th>
-                                            <th>Accept</th>
+                                            <th>Xe Số</th>
+                                            <th>Tuyến</th>
+                                            <th>Ngày</th>
+                                            <th>Giờ</th>
+                                            <th>Ghế</th>
+                                            <th>Mã Giao Dịch</th>
+                                            <th>Từ Chối</th>
+                                            <th>Đồng Ý</th>
                                         </tr>
                                     </thead>
                                      <tbody>
@@ -379,14 +380,14 @@ $bss = mysql_fetch_array(mysql_query("SELECT date, time FROM bus_info WHERE id='
 											<input type=\"hidden\" name=\"seatid\" value=\"$data[0]\">
 											<input type=\"hidden\" name=\"busid\" value=\"$data[1]\">
 											<input type=\"hidden\" name=\"action\" value=\"0\">
-											<button type=\"submit\" class=\"btn btn-danger btn-xs\">Ignore</button></form>
+											<button type=\"submit\" class=\"btn btn-danger btn-xs\">Từ Chối</button></form>
 											
 																							</td>	<td>
 											<form action=\"\" method=\"post\">
 											<input type=\"hidden\" name=\"seatid\" value=\"$data[0]\">
 											<input type=\"hidden\" name=\"busid\" value=\"$data[1]\">
 											<input type=\"hidden\" name=\"action\" value=\"1\">
-											<button type=\"submit\" class=\"btn btn-success btn-xs\">ACCEPT</button></form>
+											<button type=\"submit\" class=\"btn btn-success btn-xs\">ĐỒNG Ý</button></form>
 											
 											</td>
                                         </tr>

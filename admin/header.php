@@ -26,7 +26,12 @@ redirect('signout.php');
   <link rel="stylesheet" href="css/jquery.tagsinput.css" />
   <link rel="stylesheet" href="css/colorpicker.css" />
   <link rel="stylesheet" href="css/dropzone.css" />
-
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/blitzer/jquery-ui.min.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/blitzer/theme.min.css" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="js/jquery-ui.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="js/datepicker-vi.js"></script>
   <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
   <script src="js/html5shiv.js"></script>
@@ -95,23 +100,22 @@ $( "#datepicker2" ).datepicker();
         <li><a href="home.php"><i class="fa fa-home"></i> <span>Bảng Điều Khiển</span></a></li>
         
 	
-        <li class="nav-parent"><a href="#"><i class="fa fa-table fa-fw"></i><span>Quản Lý Tuyến Xe</span></a>
+        <li class=""><a href="#"><i class="fa fa-table fa-fw"></i><span>Quản Lý Tuyến Xe</span></a>
 
-          <ul style="display: none;" class="children">
-                        <li><a href="routeadd.php"><i class="fa fa-caret-right"></i>Thêm Tuyến Xe Mới</a></li>
-                        <li><a href="routeview.php"><i class="fa fa-caret-right"></i>Xem/Sửa Tuyến Xe</a></li>
+          <ul style="display: inline;" class="children">
+                        <li><a href="routeadd.php"><i class="fa fa-caret-right"></i>Thêm Tuyến Xe</a></li>
+                        <li><a href="routeview.php"><i class="fa fa-caret-right"></i>Sửa Tuyến Xe</a></li>
 
           </ul>
         </li>
 	
-        <li class="nav-parent"><a href="#"><i class="fa fa-bar-chart-o fa-fw"></i><span>Quản Lý Xe</span></a>
+        <li class=""><a href="#"><i class="fa fa-bar-chart-o fa-fw"></i><span>Quản Lý Lịch Trình Xe</span></a>
 
-          <ul style="display: none;" class="children">
+          <ul style="display: inline;" class="children">
 
-                                <li><a href="busadd.php"><i class="fa fa-caret-right"></i>Thêm Mới Xe</a></li>
-                                <li><a href="bussch.php"><i class="fa fa-caret-right"></i>Xem Lịch Trình Xe</a></li>
-                                <li><a href="busview.php"><i class="fa fa-caret-right"></i>Xem/Sửa Thông Tin Xe</a></li>
-
+                                <li><a href="busadd.php"><i class="fa fa-caret-right"></i>Thêm Lịch Trình Xe</a></li>
+                                <li><a href="busview.php"><i class="fa fa-caret-right"></i>Sửa Lịch Trình Xe</a></li>
+								<li><a href="bussch.php"><i class="fa fa-caret-right"></i>Xoá Lịch Trình Xe</a></li>
           </ul>
         </li>
 
@@ -120,7 +124,7 @@ $( "#datepicker2" ).datepicker();
 
                         <li><a href="authorize.php"><i class="fa fa-ticket fa-fw"></i>Vé Đang Treo</span></a></li>
 
-
+<!--
 
 		<li> <button class="btn btn-block btn-info">Website Management</button> </li>		
 		  
@@ -136,7 +140,7 @@ $( "#datepicker2" ).datepicker();
           </ul>
         </li>
 		
-    <!--
+    
         <li class="nav-parent"><a href="#"><i class="fa fa-th-list"></i> <span>MENU Manager</span></a>
           <ul class="children">
             <li><a href="menuadd.php"><i class="fa fa-caret-right"></i>Add MENU</a></li>

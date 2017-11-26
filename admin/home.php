@@ -1,6 +1,6 @@
 <?php
 require_once('function.php');
-connectdb();
+connectdbuser();
 session_start();
 
 if (!is_user()) {
@@ -12,9 +12,10 @@ if (!is_user()) {
 
 <?php
  $user = $_SESSION['username'];
-$usid = mysql_fetch_array(mysql_query("SELECT id FROM users WHERE username='".$user."'"));
+ $usid = mysql_fetch_array(mysql_query("SELECT id FROM mst_user WHERE username='".$user."'"));
  $uid = $usid[0];
- 
+
+ connectdb();
 $bus = mysql_fetch_array(mysql_query("SELECT COUNT(*) FROM bus_info")); 
 
 
@@ -128,7 +129,69 @@ $pend = mysql_fetch_array(mysql_query("SELECT COUNT(*) FROM seat_details WHERE s
                         </a>
                     </div>
                 </div>
-               
+				<div class="row">
+					<form class="bookingFrm" target="_blank" action="booking.php" method="POST">
+						<h2>CHỌN NGÀY ĐẶT VÉ</h2>
+						<div id="datepicker"></div>
+
+						<h3>Ngày đặt vé</h3>
+						<h3 class="selected-date"></h3>
+						
+						<div class="row" id="id1">
+							<div class="col-md-4">
+								<h4>Tuyến:</h4>
+								<select class="form-control" id="schedule" name="schedule"></select>
+								<input type="text" id="route" name="route" hidden="">
+							</div>
+						</div>
+						
+						<br><br>
+						<input type="text" hidden="" id="selectedDate" name="selectedDate">
+						<input type="button" value="Tiếp tục" class="btn btn-primary">
+						<script type="text/javascript">
+							$(function() {
+								$.datepicker.setDefaults($.datepicker.regional['vi']);
+								$("#datepicker").datepicker({
+									numberOfMonths: 3,
+									minDate: 0,
+									onSelect: function(date, instance) {
+										var selected = $(this).val();
+										console.log(selected);
+										$("#selectedDate").val(selected);
+										$(".selected-date").empty().append(selected);
+										$.ajax({
+											type: "POST",
+											url: "./controller/getSchedule.php",
+											data: { date: selected },
+											success: function(result)
+											{
+												console.log(result);
+												$("#schedule").html(result);
+											}
+										});
+									}
+								});
+							});
+
+		//                    $('#route').on('change', function() {
+		//                        console.log( $(this).find(":selected").val() );
+		//                    });
+							
+							$(".btn").click(function() {                      
+								if (!$(".selected-date").is(':empty')) {
+									$("#route").val($('#schedule').find("option:selected").text());
+									console.log($("#route").val());
+									$(".bookingFrm").submit();
+								}
+								
+								//check schedule is empty or not later
+							});
+						</script>
+						
+						<table id="calendar-demo" class="calendar"></table>
+						
+					</form>
+				</div>
             </div>
 
             <!-- /.row -->

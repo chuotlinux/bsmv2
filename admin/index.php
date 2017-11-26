@@ -60,8 +60,8 @@ height: 50px;
                         <div class="col-md-6 col-md-offset-3 form-box">
                         	<div class="form-top">
                         		<div class="form-top-left">
-                        			<h3>Sign In</h3>
-                            		<p>Fill in the form below to get instant access:</p>
+                        			<h3>ĐĂNG NHẬP</h3>
+                            		<p>Vui lòng nhập tên và mật khẩu:</p>
                         		</div>
                         		<div class="form-top-right">
                         			<i class="fa fa-user"></i>
@@ -88,7 +88,7 @@ height: 50px;
 <input type="password" name="password" placeholder="Password" class="pass form-control">
 </div>
 
-			                        <button type="submit" class="btn"> Submit</button>
+			                        <button type="submit" class="btn"> ĐĂNG NHẬP</button>
 			                    </form>
 		                    </div>
                         </div>

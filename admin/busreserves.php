@@ -1,6 +1,6 @@
 <?php
 require_once('function.php');
-connectdb();
+connectdbuser();
 session_start();
 
 if (!is_user()) {
@@ -13,9 +13,10 @@ if (!is_user()) {
 
 <?php
  $user = $_SESSION['username'];
-$usid = mysql_fetch_array(mysql_query("SELECT id FROM users WHERE username='".$user."'"));
+$usid = mysql_fetch_array(mysql_query("SELECT id FROM mst_user WHERE username='".$user."'"));
  $uid = $usid[0];
  include ('header.php');
+ connectdb();
  ?>
     <!-- DataTables CSS -->
     <link href="../bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.css" rel="stylesheet">
@@ -26,7 +27,7 @@ $usid = mysql_fetch_array(mysql_query("SELECT id FROM users WHERE username='".$u
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Buses Seat Informations</h1>
+                    <h1 class="page-header">Thông Tin Vé</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
@@ -44,14 +45,14 @@ $usid = mysql_fetch_array(mysql_query("SELECT id FROM users WHERE username='".$u
                                 <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                     <thead>
                                         <tr>
-                                            <th>Bus #</th>
-                                            <th>Route</th>
-                                            <th>Date</th>
-                                            <th>Time</th>
-                                            <th>Total Seat</th>
-                                            <th>Sold Seat</th>
-                                            <th>Available Seat</th>
-                                            <th>Action</th>
+                                            <th>Xe Số</th>
+                                            <th>Tuyến</th>
+                                            <th>Ngày</th>
+                                            <th>Giờ</th>
+                                            <th>Tổng Ghế</th>
+                                            <th>Ghế Đã Bán</th>
+                                            <th>Ghế Còn Trống</th>
+                                            <th></th>
                                         </tr>
                                     </thead>
                                      <tbody>
@@ -77,8 +78,8 @@ $rname = mysql_fetch_array(mysql_query("SELECT routename FROM bus_route WHERE id
                                             
 											<td>
 											
-											<a href=\"reserveview.php?bid=$data[0]\"><button type=\"button\" class=\"btn btn-success btn-xs\">SEATS INFO</button></a>
-											<a href=\"shaon.php?bid=$data[0]\"><button type=\"button\" class=\"btn btn-success btn-xs\">PRINT COPY</button></a>
+											<a href=\"reserveview.php?bid=$data[0]\"><button type=\"button\" class=\"btn btn-success btn-xs\">THÔNG TIN GHẾ</button></a>
+											<a href=\"shaon.php?bid=$data[0]&date=$data[3]&time=$data[2]\"><button type=\"button\" class=\"btn btn-success btn-xs\">IN PHƠI</button></a>
 											
 											</td>
                                         </tr>

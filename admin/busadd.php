@@ -1,6 +1,6 @@
 <?php
 require_once('function.php');
-connectdb();
+connectdbuser();
 session_start();
 
 if (!is_user()) {
@@ -13,8 +13,9 @@ if (!is_user()) {
 
 <?php
  $user = $_SESSION['username'];
-$usid = mysql_fetch_array(mysql_query("SELECT id FROM users WHERE username='".$user."'"));
+ $usid = mysql_fetch_array(mysql_query("SELECT id FROM mst_user WHERE username='".$user."'"));
  $uid = $usid[0];
+ connectdb();
  include ('header.php');
  ?>
 
@@ -24,7 +25,7 @@ $usid = mysql_fetch_array(mysql_query("SELECT id FROM users WHERE username='".$u
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Thêm XE</h1>
+                    <h1 class="page-header">Thêm LỊCH TRÌNH Xe Mới</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
@@ -45,9 +46,6 @@ $route = $_POST["route"];
 $tm = $_POST["tm"];
 $dt = $_POST["dt"];
 $seat = 40;
-
-
-///////////////////////-------------------->> Catid  ki 0??
 
  if($route==0)
       {
@@ -81,7 +79,7 @@ $i++;
 echo "<div class=\"alert alert-success alert-dismissable\">
 <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-hidden=\"true\">&times;</button>	
 
-Thêm thông tin xe mới thành công!
+Thêm xe mới thành công!
 
 </div>";
 
@@ -100,7 +98,7 @@ if ($err1 == 1){
 echo "<div class=\"alert alert-danger alert-dismissable\">
 <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-hidden=\"true\">&times;</button>	
 
-Vui lòng chọn lịch trình!!!
+Vui lòng chọn tuyến!!!
 
 </div>";
 }
@@ -147,10 +145,10 @@ Vui lòng chọn ngày!!!
 		
                     <div class="form-group">
 					
-					<label>Chọn Lịch Trình</label>
+					<label>Chọn Tuyến</label>
 					
 					<select name="route" class="form-control">
-					<option value="0">Vui lòng chọn lịch trình</option>
+					<option value="0">Vui lòng chọn tuyến</option>
 					<?php
 
 $ddaa = mysql_query("SELECT id, routename FROM bus_route ORDER BY id");

@@ -1,42 +1,49 @@
 <?php
 
-
-$baseurl = "http://ticket.rexbd.net";
-
-
+require_once('config.php');
 error_reporting(E_ALL);
-	
-$dbname = "dbbus";
-$dbhost = "localhost";
-$dbuser = "root";
-$dbpass = "";
 
-
+$dsn = 'mysql:dbname=mgmuser;host=localhost';
 
 function connectdb()
 {
-    global $dbname, $dbuser, $dbhost, $dbpass;
-    $conms = @mysql_connect($dbhost,$dbuser,$dbpass); //connect mysql
+	global $conms;
+    $conms = @mysql_connect(dbhost,dbuser,dbpass);
     if(!$conms) return false;
-    $condb = @mysql_select_db($dbname);
+	$condb = @mysql_select_db(dbname);
     if(!$condb) return false;
     return true;
 }
 
+function connectdbbus()
+{
+	global $conmsbus;
+    $conmsbus = @mysql_connect(dbhost,dbuser,dbpass);
+    if(!$conmsbus) return false;
+	$condbbus = @mysql_select_db(dbbus);
+    if(!$condbbus) return false;
+    return true;
+}
 
+function connectdbuser()
+{
+	global $conmsuser;
+    $conmsuser = @mysql_connect(dbhost,dbuser,dbpass); //connect mysql
+    if(!$conmsuser) return false;
+	$condbuser = @mysql_select_db(dbusername);
+    if(!$condbuser) return false;
+    return true;
+}
 
 function dbconnect()
 {
-	global $pdo;
-
+	global $pdo, $dsn;
 	try {
-		$pdo = new PDO('mysql:host=localhost;dbname=dbbus', 'root', '');
+		$pdo = new PDO($dsn, dbuser, dbpass);
 	} catch (PDOException $e) {
-		die('MySQL connection fail! ' . $e->getMessage());
+		die('Lỗi kết nối với cơ sở dữ liệu: ' . $e->getMessage());
 	}
 }
-
-
 
 function insert_new_user($username, $password)
 {
@@ -77,12 +84,9 @@ function attempt($username, $password)
 {
 	global $pdo;
 	
-	$stmt = $pdo->prepare('
-		SELECT id, username
-		FROM admins
-		WHERE username = :username AND password = :password
-		LIMIT 1');
-
+	$sql = 'SELECT m.id, m.username, m.isactive, c.token FROM mst_user as m INNER JOIN mst_credential as c ON m.username= :username AND m.id = c.userid AND c.token= :password';
+	
+	$stmt = $pdo->prepare($sql);
 	$stmt->execute(array(':username' => $username, 'password' => md5($password)));
 
 	if ($data = $stmt->fetch( PDO::FETCH_OBJ )) {
@@ -113,9 +117,5 @@ function valid_username($str){
 function valid_password($str){
 	return preg_match('/^[a-z0-9_-]{6,18}$/', $str);
 }
-
-
-
-
 
 ?>

@@ -1,6 +1,6 @@
 <?php
 require_once('function.php');
-connectdb();
+connectdbuser();
 session_start();
 
 if (!is_user()) {
@@ -12,9 +12,9 @@ if (!is_user()) {
 
 <?php
  $user = $_SESSION['username'];
-$usid = mysql_fetch_array(mysql_query("SELECT id FROM users WHERE username='".$user."'"));
+ $usid = mysql_fetch_array(mysql_query("SELECT id FROM mst_user WHERE username='".$user."'"));
  $uid = $usid[0];
- 
+ connectdb();
 $bus = mysql_fetch_array(mysql_query("SELECT COUNT(*) FROM bus_info")); 
 
 
@@ -54,11 +54,11 @@ $pend = mysql_fetch_array(mysql_query("SELECT COUNT(*) FROM seat_details WHERE s
 
 // IMAGE UPLOAD //////////////////////////////////////////////////////////
 	$folder = "../img/";
-	$extention = strrchr($_FILES['bgimg']['name'], ".");
+	//$extention = strrchr($_FILES['bgimg']['name'], ".");
 	$new_name = "logo";
 	$bgimg = $new_name.'.png';
 	$uploaddir = $folder . $bgimg;
-	move_uploaded_file($_FILES['bgimg']['tmp_name'], $uploaddir);
+	//move_uploaded_file($_FILES['bgimg']['tmp_name'], $uploaddir);
 //////////////////////////////////////////////////////////////////////////
 
 

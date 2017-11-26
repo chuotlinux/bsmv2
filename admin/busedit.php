@@ -1,6 +1,6 @@
 <?php
 require_once('function.php');
-connectdb();
+connectdbuser();
 session_start();
 
 if (!is_user()) {
@@ -12,8 +12,9 @@ if (!is_user()) {
 
 <?php
  $user = $_SESSION['username'];
-$usid = mysql_fetch_array(mysql_query("SELECT id FROM users WHERE username='".$user."'"));
+ $usid = mysql_fetch_array(mysql_query("SELECT id FROM mst_user WHERE username='".$user."'"));
  $uid = $usid[0];
+ connectdb();
  include ('header.php');
  ?>
 
@@ -23,7 +24,7 @@ $usid = mysql_fetch_array(mysql_query("SELECT id FROM users WHERE username='".$u
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">EDIT Route</h1>
+                    <h1 class="page-header">Thay Đổi Lịch Trình</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
@@ -45,7 +46,6 @@ $tm = $_POST["tm"];
 $dt = $_POST["dt"];
 $bid = $_POST["bid"];
 
-///////////////////////-------------------->> Catid  ki 0??
 
  if($route==0)
       {
@@ -72,7 +72,7 @@ if($res){
 echo "<div class=\"alert alert-success alert-dismissable\">
 <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-hidden=\"true\">&times;</button>	
 
-UPDATE Successfully!
+Thay đổi lịch trình thành công!
 
 </div>";
 
@@ -80,7 +80,7 @@ UPDATE Successfully!
 	echo "<div class=\"alert alert-danger alert-dismissable\">
 <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-hidden=\"true\">&times;</button>	
 
-Some Problem Occurs, Please Try Again. 
+Có lỗi xảy ra. Vui lòng thử lại.
 
 </div>";
 }
@@ -91,7 +91,7 @@ if ($err1 == 1){
 echo "<div class=\"alert alert-danger alert-dismissable\">
 <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-hidden=\"true\">&times;</button>	
 
-Please select a Route!!!!
+Vui lòng chọn tuyến!!!!
 
 </div>";
 }
@@ -99,7 +99,7 @@ if ($err2 == 1){
 echo "<div class=\"alert alert-danger alert-dismissable\">
 <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-hidden=\"true\">&times;</button>	
 
-You must have to Enter Bus Time!!!!
+Vui lòng chọn giờ!!!!
 
 </div>";
 
@@ -109,7 +109,7 @@ if ($err3 == 1){
 	echo "<div class=\"alert alert-danger alert-dismissable\">
 <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-hidden=\"true\">&times;</button>	
 
-Please select a Bus Date.....
+Vui lòng chọn ngày!!!!
 
 </div>";
 }	
@@ -140,11 +140,11 @@ $rname = mysql_fetch_array(mysql_query("SELECT routename FROM bus_route WHERE id
 		echo "		    <form action=\"busedit.php?bid=$bid\" method=\"post\">
 		            <div class=\"form-group\">
 
-					<label>Select Route</label>
+					<label>Chọn Tuyến</label>
 					
 					<select name=\"route\" class=\"form-control\">
 					<option value=\"$details[0]\">$rname[0]</option>
-					<option value=\"0\">Please Select a Route</option>";
+					<option value=\"0\">Vui lòng chọn tuyến</option>";
 		
 
 $ddaa = mysql_query("SELECT id, routename FROM bus_route ORDER BY id");
@@ -156,13 +156,13 @@ $ddaa = mysql_query("SELECT id, routename FROM bus_route ORDER BY id");
 
 					
 echo "	</select><br/>
-			<label>Select Time</label><input class=\"form-control\" value=\"$details[1]\" name=\"tm\" type=\"text\">
-            <label>Select Date</label><input class=\"form-control\" type=\"text\" id=\"datepicker\" name=\"dt\" value=\"$details[2]\">
+			<label>Chọn Giờ</label><input class=\"form-control\" value=\"$details[1]\" name=\"tm\" type=\"text\">
+            <label>Chọn Ngày</label><input class=\"form-control\" type=\"text\" id=\"datepicker\" name=\"dt\" value=\"$details[2]\">
 			<input type=\"hidden\" name=\"bid\" value=\"$bid\">";
  ?>                   
 					</div>
                    
-					<input type="submit" class="btn btn-lg btn-success btn-block" value="Change">
+					<input type="submit" class="btn btn-lg btn-success btn-block" value="THAY ĐỔI">
 			    	</form>
                 </div>
 						

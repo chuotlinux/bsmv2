@@ -1,6 +1,6 @@
 <?php
 require_once('function.php');
-connectdb();
+connectdbuser();
 session_start();
 
 if (!is_user()) {
@@ -12,8 +12,9 @@ if (!is_user()) {
 
 <?php
  $user = $_SESSION['username'];
-$usid = mysql_fetch_array(mysql_query("SELECT id FROM users WHERE username='".$user."'"));
+ $usid = mysql_fetch_array(mysql_query("SELECT id FROM mst_user WHERE username='".$user."'"));
  $uid = $usid[0];
+ connectdb();
  include ('header.php');
  ?>
 
@@ -23,7 +24,7 @@ $usid = mysql_fetch_array(mysql_query("SELECT id FROM users WHERE username='".$u
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">EDIT Route</h1>
+                    <h1 class="page-header">Thay Đổi TUYẾN XE</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
@@ -43,10 +44,7 @@ if($_POST)
 $cid = $_POST["cid"];
 $rname = $_POST["rname"];
 
-
-
-///////////////////////-------------------->> catname ki faka??
-
+$err1=0;
  if(trim($rname)=="")
       {
 $err1=1;
@@ -63,7 +61,7 @@ if($res){
 	echo "<div class=\"alert alert-success alert-dismissable\">
 <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-hidden=\"true\">&times;</button>	
 
-Route Edited Successfully!
+Thay đổi tuyến thành công!
 
 </div>";
 
@@ -71,7 +69,7 @@ Route Edited Successfully!
 	echo "<div class=\"alert alert-danger alert-dismissable\">
 <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-hidden=\"true\">&times;</button>	
 
-Some Problem Occurs, Please Try Again. 
+Có lỗi xảy ra. Vui lòng thử lại.
 
 </div>";
 }
@@ -82,7 +80,7 @@ if ($err1 == 1){
 echo "<div class=\"alert alert-danger alert-dismissable\">
 <button type=\"button\" class=\"close\" data-dismiss=\"alert\" aria-hidden=\"true\">&times;</button>	
 
-Route Name Can Not Be Empty!!!
+Tên tuyến không thể để trống!!!
 
 </div>";
 echo"<h1></h1>";
@@ -112,12 +110,12 @@ $cid = $_GET["cid"];
 
 $details = mysql_fetch_array(mysql_query("SELECT routename FROM bus_route WHERE id='".$cid."'"));
 echo "
-					<label>Category Name</label><input class=\"form-control\" value=\"$details[0]\" name=\"rname\" type=\"text\"><br/>
+					<label>Tên Tuyến</label><input class=\"form-control\" value=\"$details[0]\" name=\"rname\" type=\"text\"><br/>
 					<input type=\"hidden\" name=\"cid\" value=\"$cid\">
 ";
 ?>                    
 					</div>
-					<input type="submit" class="btn btn-lg btn-success btn-block" value="Change">
+					<input type="submit" class="btn btn-lg btn-success btn-block" value="THAY ĐỔI">
 			    	</form>
                 </div>
 						

@@ -3,11 +3,13 @@ require_once('function.php');
 connectdb();
 session_start();
 $bid = $_GET["bid"];
+$date = $_GET["date"];
+$time = $_GET["time"];
 header("Content-type: application/vnd.ms-word");
-header("Content-Disposition: attachment;Filename=Pabna_express_Bus_id-$bid.doc");
+header("Content-Disposition: attachment;Filename=$date-$time-Bus $bid.doc");
 
 echo "<html>";
-echo "<meta http-equiv=\"Content-Type\" content=\"text/html; charset=Windows-1252\">";
+echo "<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">";
 echo "<body>";
 
 
@@ -16,10 +18,11 @@ echo "<body>";
 
 
 <style type="text/css">
-.tg  {border-collapse:collapse;border-spacing:0; width: 900px;}
+.tg  {border-collapse:collapse;border-spacing:0; width: 620px;}
 .tg td{font-family:Arial, sans-serif;font-size:14px;padding:5px 10px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal; width: 150px;}
 .tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 20px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;}
 .tg .tg-s6z2{text-align:center}
+.tg .tg-s6z3{font-family:Arial;text-align:center;font-weight: bold}
 </style>
 
 
@@ -33,6 +36,15 @@ echo "<body>";
 
 $buss = mysql_query("SELECT id, busid, seatid, pname, pmobile, start, depart, trxid, status FROM seat_details WHERE busid='".$bid."'");
     echo mysql_error();
+	echo "<table class=\"tg\">
+  <tr><b>
+    <th class=\"tg-s6z3\">Số Ghế</th>
+    <th class=\"tg-s6z3\">Tên</th>
+    <th class=\"tg-s6z3\">Điện Thoại</th>
+    <th class=\"tg-s6z3\">Start</th>
+    <th class=\"tg-s6z3\">Depart</th>
+    </b>
+  </tr>";
     while ($datas = mysql_fetch_array($buss))
     {
 
@@ -164,36 +176,20 @@ $seats = $datas[2];
 	
 
 
-echo "<b><table class=\"tg\">
+echo "
   <tr>
-    <td class=\"tg-s6z2\">Seat No: $seat</td>
+    <td class=\"tg-s6z2\">$seat</td>
     
-    <td class=\"tg-s6z2\">P. Name: $datas[3]</td>
-    <td class=\"tg-s6z2\">P. Mobile: $datas[4]</td>
-    <td class=\"tg-s6z2\">Start: $datas[5]</td>
-    <td class=\"tg-s6z2\">Depart: $datas[6]</td>
+    <td class=\"tg-s6z2\">$datas[3]</td>
+    <td class=\"tg-s6z2\">$datas[4]</td>
+    <td class=\"tg-s6z2\">$datas[5]</td>
+    <td class=\"tg-s6z2\">$datas[6]</td>
     
-   
-   
-  </tr></b></table>";
-
-
-
-
-
+  </tr>";
 	}
-
-
-
-
+	echo "
+  
+  </table>";
 echo "</body>";
-
-
-
-
 echo "</html>";
-
-
-
-
 ?>

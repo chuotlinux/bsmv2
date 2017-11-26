@@ -1,6 +1,6 @@
 <?php
 require_once('function.php');
-connectdb();
+connectdbuser();
 session_start();
 
 if (!is_user()) {
@@ -13,14 +13,15 @@ if (!is_user()) {
 
 <?php
  $user = $_SESSION['username'];
-$usid = mysql_fetch_array(mysql_query("SELECT id FROM users WHERE username='".$user."'"));
+ $usid = mysql_fetch_array(mysql_query("SELECT id FROM mst_user WHERE username='".$user."'"));
  $uid = $usid[0];
+ connectdb();
  include ('header.php');
 
 
 
-$bid = $_GET["bid"];
-mysql_query("DELETE FROM bus_sch WHERE id='".$bid."'");
+//$bid = $_GET["bid"];
+//mysql_query("DELETE FROM bus_sch WHERE id='".$bid."'");
 
 
 
@@ -34,7 +35,7 @@ mysql_query("DELETE FROM bus_sch WHERE id='".$bid."'");
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">View/Edit Buses</h1>
+                    <h1 class="page-header">Xem/Xoá LỊCH TRÌNH Xe</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
@@ -52,10 +53,10 @@ mysql_query("DELETE FROM bus_sch WHERE id='".$bid."'");
                                 <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                     <thead>
                                         <tr>
-                                            <th>Bus #</th>
-                                            <th>Route</th>
-                                            <th>Time</th>
-                                            <th>Action</th>
+                                            <th>Xe Số</th>
+                                            <th>Tuyến</th>
+                                            <th>Thời Gian</th>
+                                            <th></th>
                                         </tr>
                                     </thead>
                                      <tbody>
@@ -66,7 +67,8 @@ $ddaa = mysql_query("SELECT id, route, time FROM bus_sch ORDER BY id");
     while ($data = mysql_fetch_array($ddaa))
     {
 $sold = mysql_fetch_array(mysql_query("SELECT COUNT(*) FROM seat_details WHERE busid='".$data[0]."' AND status='1'"));
-$available = $data[4]-$sold[0];
+
+//$available = $data[4]-$sold[0];
 $rname = mysql_fetch_array(mysql_query("SELECT routename FROM bus_route WHERE id='".$data[1]."'"));
 		
  echo "                                 <tr>
@@ -76,7 +78,7 @@ $rname = mysql_fetch_array(mysql_query("SELECT routename FROM bus_route WHERE id
                                    
                                             
 											<td>
-<a href=\"bussch.php?bid=$data[0]\"><button type=\"button\" class=\"btn btn-danger btn-xs\">DELETE</button></a>
+<a href=\"bussch.php?bid=$data[0]\"><button type=\"button\" class=\"btn btn-danger btn-xs\">XOÁ</button></a>
 ";
 
 echo "</td></tr>";
